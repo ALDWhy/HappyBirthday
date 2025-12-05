@@ -9,6 +9,9 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      /* 👇 禁止手机浏览器自动放大字体 */
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
     }
 
     html, body {
@@ -46,7 +49,7 @@
     .page-2,
     .page-3,
     .page-4,
-	.page-5{
+    .page-5{
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       color: white;
     }
@@ -111,25 +114,25 @@
     }
 
     .letter {
-	  background: white;
-	  padding: 30px;
-	  border-radius: 20px;
-	  font-size: 1em; /* 👈 字体变小 */
-	  line-height: 1.7;
-	  max-width: 600px;
-	  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-	  position: relative;
-	  text-align: center; /* 👈 文字居中对齐 */
-	}
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      font-size: 1em;
+      line-height: 1.7;
+      max-width: 600px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      position: relative;
+      text-align: center;
+    }
 
-	.letter::after {
-	  content: "💌";
-	  position: absolute;
-	  bottom: -30px;
-	  left: 50%; /* 👈 居中定位 */
-	  transform: translateX(-50%); /* 👈 水平居中 */
-	  font-size: 24px;
-	}
+    .letter::after {
+      content: "💌";
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+    }
 
     .record-page {
       background: linear-gradient(135deg, #a18cd1, #fbc2eb);
@@ -145,7 +148,6 @@
       position: relative;
     }
 
-    /* ========== 黑胶唱片 ========== */
     .record {
       width: 180px;
       height: 180px;
@@ -154,14 +156,13 @@
       position: relative;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
       animation: rotateRecord 20s linear infinite;
-      animation-play-state: paused; /* 默认不转 */
+      animation-play-state: paused;
     }
 
     .record.playing {
       animation-play-state: running;
     }
 
-    /* 唱片中心圆环 */
     .record::before {
       content: '';
       position: absolute;
@@ -170,13 +171,12 @@
       transform: translate(-50%, -50%);
       width: 36px;
       height: 36px;
-      background: #d4af37; /* 金色 */
+      background: #d4af37;
       border-radius: 50%;
       box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
       z-index: 2;
     }
 
-    /* 中心小孔 */
     .record::after {
       content: '';
       position: absolute;
@@ -190,7 +190,6 @@
       z-index: 3;
     }
 
-    /* 唱片沟纹效果 */
     .record-center {
       position: absolute;
       top: 50%;
@@ -209,7 +208,6 @@
       pointer-events: none;
     }
 
-    /* 唱针 */
     .record-needle {
       position: absolute;
       top: -20px;
@@ -263,50 +261,50 @@
       font-size: 1.1em;
       opacity: 0.9;
     }
-	
-	/* ========== 最后一页：温柔告别信 ========== */
-	.final-note-page {
-	  background: linear-gradient(135deg, #fff9f4, #ffebe6); /* 柔和米粉色渐变 */
-	  color: #5a4a42;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  padding: 30px;
-	}
+    
+    /* ========== 最后一页：温柔告别信 ========== */
+    .final-note-page {
+      background: linear-gradient(135deg, #fff9f4, #ffebe6);
+      color: #5a4a42;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
 
-	.final-letter {
-	  background: white;
-	  padding: 35px;
-	  border-radius: 20px;
-	  font-size: 1.15em;
-	  line-height: 1.8;
-	  max-width: 600px;
-	  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-	  position: relative;
-	  text-align: left;
-	  font-family: "Kaiti SC", "STKaiti", "KaiTi", "Times New Roman", serif; /* 带点手写感 */
-	}
+    .final-letter {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      font-size: 1.15em;
+      line-height: 1.8;
+      max-width: 600px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+      position: relative;
+      text-align: left;
+      font-family: "Kaiti SC", "STKaiti", "KaiTi", "Times New Roman", serif;
+    }
 
-	.final-letter::before {
-	  content: "💌";
-	  position: absolute;
-	  top: 20px;
-	  right: 25px;
-	  font-size: 20px;
-	  opacity: 0.7;
-	}
+    .final-letter::before {
+      content: "💌";
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 20px;
+      opacity: 0.7;
+    }
 
-	.final-letter::after {
-	  content: "";
-	  position: absolute;
-	  bottom: -15px;
-	  left: 50%;
-	  transform: translateX(-50%);
-	  width: 40px;
-	  height: 3px;
-	  background: linear-gradient(to right, transparent, #ff9a9e, transparent);
-	  border-radius: 2px;
-	}
+    .final-letter::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(to right, transparent, #ff9a9e, transparent);
+      border-radius: 2px;
+    }
 
     /* ========== 页面进度指示器 ========== */
     #progress-dots {
@@ -412,6 +410,38 @@
       transform: scale(1.2);
     }
 
+    /* ========== 手机端字体缩小 ========== */
+    @media (max-width: 768px) {
+      .story-text,
+      .letter,
+      .final-letter,
+      .hint,
+      .footer-note,
+      .page h2 {
+        font-size: 0.9em !important;
+      }
+
+      .letter p,
+      .final-letter {
+        font-size: 0.92em !important;
+        line-height: 1.55 !important;
+      }
+
+      .story-text {
+        padding: 16px !important;
+      }
+
+      .letter,
+      .final-letter {
+        padding: 24px !important;
+      }
+
+      .play-btn {
+        font-size: 1.1em;
+        padding: 10px 32px;
+      }
+    }
+
     @media (max-width: 600px) {
       .envelope { width: 160px; height: 110px; }
       .story-image { width: 90%; }
@@ -500,12 +530,12 @@
       <button class="play-btn" id="playButton">🎵 点我听你的生日歌</button>
       <div class="footer-note">❤️ 愿你 岁岁平安</div>
     </div>
-	    <!-- 最后的温柔留言 -->
+    <!-- 最后的温柔留言 -->
     <div class="page final-note-page">
       <div class="final-letter">
         很遗憾，这个网页准备的有些匆忙了，<br>
-		希望你不要嫌弃我简陋的制作，<br>
-		和没有伴奏的生日歌。<br>
+        希望你不要嫌弃我简陋的制作，<br>
+        和没有伴奏的生日歌。<br>
         而且正好今天你休息了，我好像也没有很长的时间陪你喔……<br><br>
         不过我们很快就能见面啦！<br>
         期待和你一起创造更多美好的回忆 ❤️<br><br>
